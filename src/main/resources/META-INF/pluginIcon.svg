@@ -1,0 +1,12 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="24" height="24" fill="transparent"/>
+
+    <rect x="1" y="4" width="12" height="4" rx="1" fill="black"/>
+    <rect x="1" y="10" width="10" height="4" rx="1" fill="black"/>
+    <rect x="1" y="16" width="14" height="4" rx="1" fill="black"/>
+
+    <text x="19" y="8" font-family="Arial, sans-serif" font-size="5" fill="black">11</text>
+    <text x="19" y="14" font-family="Arial, sans-serif" font-size="5" fill="black">2</text>
+    <text x="19" y="20" font-family="Arial, sans-serif" font-size="5" fill="black">1</text>
+
+</svg>

@@ -1,15 +1,83 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
     <id>com.github.stephanjames.namedelements</id>
-    <name>named-elements</name>
-    <vendor>stephan-james</vendor>
+    <name>Named Elements Analyzer</name>
+    <vendor url="https://github.com/stephan-james/namings">Stephan James Dick</vendor>
+    <description>
+        <![CDATA[
+      <h1>Named Elements Analyzer</h1>
+
+    <p>This is a powerful plugin designed to streamline the process of understanding and navigating your codebase.
+    It scans a selected directory and generates a comprehensive, sortable table of all named code elements,
+    tailored to the specific programming languages found within your project.</p>
+
+    <h2>Key Features:</h2>
+    <ul>
+        <li>The plugin extracts and lists all significant named elements. This includes:
+            <ul>
+                <li><strong>Classes and Interfaces</strong></li>
+                <li><strong>Functions and Methods</strong></li>
+                <li><strong>Variables and Constants</strong></li>
+                <li><strong>Enums and Structs</strong></li>
+                <li><strong>Namespaces and Modules</strong></li>
+            </ul>
+        </li>
+        <li><strong>Interactive and Sortable Table:</strong>
+        The generated output is a clean, interactive table. You can easily <strong>sort</strong> the table
+        columns by <strong>element name</strong>, <strong>type</strong>, or <strong>count</strong> to quickly
+        find what you're looking for.</li>
+        <li><strong>Quick Navigation:</strong> Each entry in the table is an actionable link.
+        Clicking on an element will instantly take you to its exact location in the source code,
+        making it effortless to jump between definitions and implementations.</li>
+    </ul>
+
+    <h2>How It Works:</h2>
+    <ol>
+        <li><strong>Select a Directory or the whole Projekt and start the action "<strong>Analyze Named Elements...</strong>".</li>
+        <li><strong>Scan and Analyze:</strong> The plugin will recursively scan the selected directory and analyze the files to extract all named elements.</li>
+        <li><strong>Generate Table:</strong> A new panel or window will appear, displaying the interactive table with all the extracted information.</li>
+    </ol>
+
+    <h2>Benefits:</h2>
+    <ul>
+        <li><strong>Improved Code Comprehension:</strong>
+        Quickly get a high-level overview of a new or unfamiliar codebase.</li>
+        <li><strong>Enhanced Productivity:</strong>
+        Spend less time searching for code and more time writing it.</li>
+        <li><strong>Simplified Refactoring:</strong>
+        Easily identify all related functions, variables, or classes before making changes.</li>
+    </ul>
+
+    <p>Whether you're a new developer joining a team or a senior engineer tasked with refactoring a legacy system,
+    the <strong>Named Elements Analyzer</strong> is an indispensable tool for mastering your codebase.</p>
+    ]]>
+    </description>
+    <change-notes>
+        <![CDATA[
+        <h2>1.0.0</h1>
+        <ul>
+            <li>Initial release.</li>
+        </ul>
+    ]]>
+    </change-notes>
 
     <depends>com.intellij.modules.platform</depends>
 
-    <resource-bundle>messages.MyBundle</resource-bundle>
+    <resource-bundle>messages.Bundle</resource-bundle>
 
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.stephanjames.namedelements.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
-        <postStartupActivity implementation="com.github.stephanjames.namedelements.startup.MyProjectActivity" />
+        <toolWindow id="Named Elements Analysis"
+                    factoryClass="com.github.stephanjames.namedelements.NamedElementsAnalysisToolWindowFactory"
+                    icon="/icons/named-elements-analysis-tool-window.svg"
+                    anchor="bottom"/>
     </extensions>
+
+    <actions>
+        <action
+                id="com.github.stephanjames.namedelements.AnalyzeNamedElementsAction"
+                class="com.github.stephanjames.namedelements.AnalyzeNamedElementsAction"
+                text="Analyze Named Elements..."
+                description="Analyzes all named elements in the selected directory."/>
+    </actions>
+
 </idea-plugin>

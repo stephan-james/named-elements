@@ -1,28 +1,36 @@
-# named-elements
+# Named Elements Analyzer
 
 ![Build](https://github.com/stephan-james/named-elements/workflows/Build/badge.svg)
 [![Version](https://img.shields.io/jetbrains/plugin/v/MARKETPLACE_ID.svg)](https://plugins.jetbrains.com/plugin/MARKETPLACE_ID)
 [![Downloads](https://img.shields.io/jetbrains/plugin/d/MARKETPLACE_ID.svg)](https://plugins.jetbrains.com/plugin/MARKETPLACE_ID)
 
-## Template ToDo list
-- [x] Create a new [IntelliJ Platform Plugin Template][template] project.
-- [ ] Get familiar with the [template documentation][template].
-- [ ] Adjust the [pluginGroup](./gradle.properties) and [pluginName](./gradle.properties), as well as the [id](./src/main/resources/META-INF/plugin.xml) and [sources package](./src/main/kotlin).
-- [ ] Adjust the plugin description in `README` (see [Tips][docs:plugin-description])
-- [ ] Review the [Legal Agreements](https://plugins.jetbrains.com/docs/marketplace/legal-agreements.html?from=IJPluginTemplate).
-- [ ] [Publish a plugin manually](https://plugins.jetbrains.com/docs/intellij/publishing-plugin.html?from=IJPluginTemplate) for the first time.
-- [ ] Set the `MARKETPLACE_ID` in the above README badges. You can obtain it once the plugin is published to JetBrains Marketplace.
-- [ ] Set the [Plugin Signing](https://plugins.jetbrains.com/docs/intellij/plugin-signing.html?from=IJPluginTemplate) related [secrets](https://github.com/JetBrains/intellij-platform-plugin-template#environment-variables).
-- [ ] Set the [Deployment Token](https://plugins.jetbrains.com/docs/marketplace/plugin-upload.html?from=IJPluginTemplate).
-- [ ] Click the <kbd>Watch</kbd> button on the top of the [IntelliJ Platform Plugin Template][template] to be notified about releases containing new features and fixes.
-- [ ] Configure the [CODECOV_TOKEN](https://docs.codecov.com/docs/quick-start) secret for automated test coverage reports on PRs
-
 <!-- Plugin description -->
-This Fancy IntelliJ Platform Plugin is going to be your implementation of the brilliant ideas that you have.
+This is a powerful plugin designed to streamline the process of understanding and navigating your codebase. It scans a selected directory and generates a comprehensive, sortable table of all named code elements, tailored to the specific programming languages found within your project.
 
-This specific section is a source for the [plugin.xml](/src/main/resources/META-INF/plugin.xml) file which will be extracted by the [Gradle](/build.gradle.kts) during the build process.
+### Key Features:
 
-To keep everything working, do not remove `<!-- ... -->` sections. 
+- The plugin extracts and lists all significant named elements. This includes:
+    - **Classes and Interfaces**
+    - **Functions and Methods**
+    - **Variables and Constants**
+    - **Enums and Structs**
+    - **Namespaces and Modules**
+- **Interactive and Sortable Table:** The generated output is a clean, interactive table. You can easily **sort** the table columns by **element name**, **type**, or **count** to quickly find what you're looking for.
+- **Quick Navigation:** Each entry in the table is an actionable link. Clicking on an element will instantly take you to its exact location in the source code, making it effortless to jump between definitions and implementations.
+
+### How It Works:
+
+1. **Select a Directory or the whole Projekt and start the action "**Analyze Named Elements...**".**
+2. **Scan and Analyze:** The plugin will recursively scan the selected directory and analyze the files to extract all named elements.
+3. **Generate Table:** A new panel or window will appear, displaying the interactive table with all the extracted information.
+
+### Benefits:
+
+- **Improved Code Comprehension:** Quickly get a high-level overview of a new or unfamiliar codebase.
+- **Enhanced Productivity:** Spend less time searching for code and more time writing it.
+- **Simplified Refactoring:** Easily identify all related functions, variables, or classes before making changes.
+
+Whether you're a new developer joining a team or a senior engineer tasked with refactoring a legacy system, the **Named Elements Analyzer** is an indispensable tool for mastering your codebase.
 <!-- Plugin description end -->
 
 ## Installation
