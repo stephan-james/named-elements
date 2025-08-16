@@ -3,9 +3,15 @@
 # named-elements Changelog
 
 ## [Unreleased]
-### Added
-- Initial scaffold created from [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template)
 
 ## [1.0.0]
+
 ### Added
+
 - Initial version
+
+## [1.0.1]
+
+### Added
+
+- Configuration changes for Github action based plugin distribution. 
