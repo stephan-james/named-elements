@@ -17,7 +17,7 @@ class NamedElementsTableModel(data: List<NamedElements>) : ListBasedTableModel<N
     Column.titles
     , { namedElements, col ->
         when (Column.entries[col]) {
-            Column.CATEGORY -> namedElements.category.debugName
+            Column.CATEGORY -> namedElements.category.toString()
             Column.NAME -> namedElements.name
             Column.COUNT -> namedElements.elements.size
         }
